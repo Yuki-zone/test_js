@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>最後のシーン</title>
+        <meta name="description" content="最後のシーン" >
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+
+        <script>
+            AFRAME.registerComponent('test', {
+              init: function () {
+                console.log(this);
+                const element = this.el;
+                element.addEventListener('mouseenter', function () {
+                  console.log('mouseenter');
+                  element.components.sound.playSound();
+                });
+                element.addEventListener('mouseleave', function () {
+                  console.log('mouseleave');
+                  element.components.sound.pauseSound();
+                });
+              }
+            });
+        
+          </script>
+    </head>
+    <body>
+      <a-scene>
+        <a-assets>
+          <img id="tera_1" src="tera_1.jpg" preload="auto"></img>
+          <img id="tera_2" src="tera_2.jpg" preload="auto"></img>
+          <img id="tera_3" src="tera_3.jpg" preload="auto"></img>
+
+          <img id="umi1_1" src="umi1_1.jpg" preload="auto"></img>
+          <img id="umi1_2" src="umi1_2.jpg" preload="auto"></img>
+          <img id="umi1_3" src="umi1_3.jpg" preload="auto"></img>
+          <img id="umi1_4" src="umi1_4.jpg" preload="auto"></img>
+          <img id="umi1_5" src="umi1_5.jpg" preload="auto"></img>
+          <img id="umi1_6" src="umi1_6.jpg" preload="auto"></img>
+          <img id="umi1_7" src="umi1_7.jpg" preload="auto"></img>
+          <img id="umi1_8" src="umi1_8.jpg" preload="auto"></img>
+
+          <img id="umi2_1" src="umi2_1.jpg" preload="auto"></img>
+          <img id="umi2_2" src="umi2_2.jpg" preload="auto"></img>
+          <img id="umi2_3" src="umi2_3.jpg" preload="auto"></img>
+          <img id="umi2_4" src="umi2_4.jpg" preload="auto"></img>
+
+          <img id="umi3_1" src="umi3_1.jpg" preload="auto"></img>
+          <img id="umi3_2" src="umi3_2.jpg" preload="auto"></img>
+          <img id="umi3_3" src="umi3_3.jpg" preload="auto"></img>
+          <img id="umi3_4" src="umi3_4.jpg" preload="auto"></img>
+          <img id="umi3_5" src="umi3_5.jpg" preload="auto"></img>
+
+          <audio id="annai" src="annai2.mp3" preload="auto"></audio>
+          <audio id="nami1" src="nami1.mp3" preload="auto"></audio>  
+          <audio id="nami2" src="nami2.mp3" preload="auto"></audio> 
+          <audio id="nami3" src="nami3.mp3" preload="auto"></audio> 
+
+          <img id="logo" src="logo.jpg">
+        </a-assets>
+        <a-camera>
+          <a-cursor fuse="true" fuse-timeout="1000"></a-cursor> 
+        </a-camera>
+
+        
+        <a-sky radius="200" theta-length="180" material="shader:gradientshader;topColor:#FF4500;bottomColor:#000080"id="sky"></a-sky>
+        
+
+        <a-box id="box1" rotation="0 0 0" width="4" height="4" depth="0"  position="0 0 -8" color="000000"
+           material="opacity: 1;" sound="src: #annai; loop:true;" src="#logo" test>
+        </a-box>
+
+        <a-box id="box2" rotation="0 0 0" width="0" height="4" depth="4" position="8 0 0" color="#FFFFFF"
+           material="opacity: 1;" sound="src: #nami1; loop:true;" src="#logo" test>
+        </a-box>
+
+        <a-box id="box3" rotation="0 0 0" width="4" height="4" depth="0" position="0 0 8" color="#FFFFFF"
+           material="opacity: 1;" sound="src: #nami2; loop:true;" src="#logo" test>
+        </a-box>
+
+        <a-box id="box4" rotation="0 0 0" width="0" height="4" depth="4" position="-8 0 0" color="#FFFFFF"
+           material="opacity: 1;" sound="src: #nami3; loop:true;" src="#logo" test>
+        </a-box>
+
+        <a-image src="#tera_1" width="4" height="4" position="0 4.1 -7"></a-image>
+        <a-image src="#tera_2" width="4" height="4" position="4.1 4.1 -7"></a-image>
+        <a-image src="#tera_3" width="4" height="4" position="-4.1 4.1 -7"></a-image>
+
+        <a-image src="#umi1_1" width="4" height="4" rotation="0, -90, 0" position="7 4.1 0"></a-image>
+        <a-image src="#umi1_2" width="4" height="4" rotation="0, -90, 0" position="7 4.1 -4.1"></a-image>
+        <a-image src="#umi1_3" width="4" height="4" rotation="0, -90, 0" position="7 4.1 4.1"></a-image>
+        <a-image src="#umi1_4" width="4" height="4" rotation="0, -90, 0" position="7 0 -4.1"></a-image>
+        <a-image src="#umi1_5" width="4" height="4" rotation="0, -90, 0" position="7 0 4.1"></a-image>
+        <a-image src="#umi1_6" width="4" height="4" rotation="0, -90, 0" position="7 -4.1 0"></a-image>
+        <a-image src="#umi1_7" width="4" height="4" rotation="0, -90, 0" position="7 -4.1 -4.1"></a-image>
+        <a-image src="#umi1_8" width="4" height="4" rotation="0, -90, 0" position="7 -4.1 4.1"></a-image>
+
+        <a-image src="#umi2_1" width="4" height="4" rotation="0, 180, 0" position="4.1 4.1 7"></a-image>
+        <a-image src="#umi2_2" width="4" height="4" rotation="0, 180, 0" position="4.1 -4.1 7"></a-image>
+        <a-image src="#umi2_3" width="4" height="4" rotation="0, 180, 0" position="-4.1 4.1 7"></a-image>
+        <a-image src="#umi2_4" width="4" height="4" rotation="0, 180, 0" position="-4.1 -4.1 7"></a-image>
+
+        <a-image src="#umi3_1" width="4" height="4" rotation="0, 90, 0" position="-7 4.1 0"></a-image>
+        <a-image src="#umi3_2" width="4" height="4" rotation="0, 90, 0" position="-7 4.1 -4.1"></a-image>
+        <a-image src="#umi3_3" width="4" height="4" rotation="0, 90, 0" position="-7 4.1 4.1"></a-image>
+        <a-image src="#umi3_4" width="4" height="4" rotation="0, 90, 0" position="-7 -4.1 -4.1"></a-image>
+        <a-image src="#umi3_5" width="4" height="4" rotation="0, 90, 0" position="-7 -4.1 4.1"></a-image>
+
+      </a-scene>
+    </body>
+</html>
